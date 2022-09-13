@@ -1,6 +1,3 @@
-import firstJsFile from './modules/one';
-import secondJsFile from './modules/two';
+import timer from './modules/timer';
 
-firstJsFile();
-secondJsFile
-();
+timer('22 september 2022');
