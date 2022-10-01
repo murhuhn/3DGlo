@@ -6,6 +6,8 @@ import modal from './modules/modal';
 
 import validate from './modules/validation';
 
+import tabs from './modules/tabs';
+
 timer('22 september 2022');
 
 menu();
@@ -13,3 +15,5 @@ menu();
 modal();
 
 validate();
+
+tabs();
