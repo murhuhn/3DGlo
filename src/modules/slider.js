@@ -13,7 +13,6 @@ const slider = () =>{
           portfolioDots.appendChild(dot);
       });
       portfolioDots.children[0].classList.add('dot-active');
-      console.log(portfolioDots);
   };
   createDot();
 
