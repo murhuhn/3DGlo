@@ -1,4 +1,4 @@
-import animate from './animate';
+import { animate } from './helpers';
 
 const modal = () => {
   document.addEventListener('DOMContentLoaded', () => {

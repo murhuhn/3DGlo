@@ -6,9 +6,10 @@ const animate = ({ timing, draw, duration }) => {
     let timeFraction = (time - start) / duration;
     if (timeFraction > 1) timeFraction = 1;
 
+
     let progress = timing(timeFraction);
 
-    draw(progress); 
+    draw(progress);
 
     if (timeFraction < 1) {
       requestAnimationFrame(animate);
@@ -16,4 +17,4 @@ const animate = ({ timing, draw, duration }) => {
   });
 };
 
-export default animate;
+export { animate };
