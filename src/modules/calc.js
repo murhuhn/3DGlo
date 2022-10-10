@@ -45,4 +45,3 @@ const calculator = (price = 100) =>{
 
 export default calculator;
 
-n
