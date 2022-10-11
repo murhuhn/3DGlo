@@ -9,22 +9,25 @@ const sendForm = ({ idForm, someElem = [] }) => {
     const valName = document.querySelectorAll('[placeholder="Ваше имя"]');
     const valPhone = document.querySelectorAll('[placeholder="Номер телефона"]');
 
+    const validate = (list) => {
 
-    const validate = () => {
         let success = true;
 
-        valMessage.addEventListener('input', (e) => {
-            e.target.value = e.target.value.replace(/[^а-яёА-ЯЁ 0-9 , . - \s]/g, "");
-        });
-        valName.forEach(valName => valName.addEventListener('input', (e) => {
-            e.target.value = e.target.value.replace(/[^а-яёА-ЯЁ ]/g, "");
-        }));
-        valPhone.forEach(valPhone => valPhone.addEventListener('input', (e) => {
-            e.target.value = e.target.value.replace(/[^+() 0-9 -]+(.*)/, '$1');
-        }));
-        return success;
-    };
+        let emailReg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
+        list.forEach(input => {
+            if (input.name == 'user_name' && input.value.length < 2) {
+                success = false;
+            }
+            if (input.name == 'user_email' && emailReg.test(input.value) == false) {
+                success = false;
+            }
+            if (input.name == 'user_phone' && input.value.length < 10) {
+                success = false;
+            }
+        })
+        return success;
+    }
 
     const sendData = (data) => {
         return fetch('https://jsonplaceholder.typicode.com/posts', {
