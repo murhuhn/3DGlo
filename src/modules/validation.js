@@ -15,9 +15,9 @@ const validate = () => {
   };
 
   const phoneValidation = (e) => {
-    e.target.value = e.target.value.replace(/[a-zА-я!@#$%&*_=]+$/, '');
+    e.target.value = e.target.value.replace(/[a-zA-Zа-яА-Я!@#$%&*_=]+$/, '');
   };
-
+  
   calcItem.forEach((item) => {
     item.addEventListener('input', (e) => {
       e.target.value = e.target.value.replace(/[^0-9\.]/, '');
